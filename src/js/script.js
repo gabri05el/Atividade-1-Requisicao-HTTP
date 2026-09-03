@@ -1,9 +1,9 @@
-let evtCidade = document.getElementById("cidade");
+let cmpCidade = document.getElementById("cidade");
 let eltMensagem = document.getElementById("mensagem");
 let eltCidades = document.getElementById("cidades");
 let eltPrevisao = document.getElementById("previsao");
 
-evtCidade.addEventListener("keydown", function(chave) {
+cmpCidade.addEventListener("keydown", function(chave) {
 
     if(chave.key == "Enter") {
 
@@ -17,7 +17,7 @@ evtCidade.addEventListener("keydown", function(chave) {
 // Esta função busca as cidades correspondentes ao nome digitado pelo usuário. Ela faz uma requisição para a API do BrasilAPI e exibe as cidades encontradas na página.
 async function buscarCidades() {
     // Obtém o valor digitado pelo usuário no campo de entrada de texto (input) com o ID "cidade" e armazena na variável nmCidade.
-    let nmCidade = evtCidade.value;
+    let nmCidade = cmpCidade.value;
 
     // Exibe uma mensagem de busca enquanto a requisição para a API está sendo processada
     eltMensagem.textContent = "Buscando cidades...";
@@ -83,7 +83,7 @@ async function buscarPrevisao(previsoes) {
                 <p>Temperatura máxima: ${dados.clima[0].max}°C</p>
                 <p>Indice UV: ${dados.clima[0].indice_uv}</p>
             </div>
-        `
+        `;
 
     }else {
 
